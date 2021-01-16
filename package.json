@@ -1,0 +1,20 @@
+{
+  "name": "avios_backend",
+  "version": "1.0.0",
+  "description": "api for avios products management",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "SET NODE_ENV=production & node index.js",
+    "start:dev": "SET NODE_ENV=development & node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Akoni Mayowa",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
