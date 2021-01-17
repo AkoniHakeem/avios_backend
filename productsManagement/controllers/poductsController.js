@@ -5,8 +5,16 @@ const productController = {}
 
 productController.save = async function (req, res)  {
     try {
-        const receivedProduct = new Product(res.body.product)
+        const receivedProduct = await Product_Variety.create({
+            product_id: 1,
+            size: 40,
+            color: "black",
+            quantity: 10,
+            image: "",
+            price: 50.00
+        })
         //db.save(receivedProduct);
+        console.log(receivedProduct)
         res.sendStatus(200);
     } catch (error) {
         res.status(500).send("Error: --")
@@ -25,7 +33,8 @@ productController.update = async function (req, res)  {
 productController.showProducts = async (req, res) => {
     try {
 
-        const products = []
+        const products = await Product.findAll()
+        console.log("products found - ", products);
         res.json(products);
     } catch (error) {
         res.status(500).send("Error: --")

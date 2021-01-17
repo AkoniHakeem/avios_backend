@@ -5,12 +5,12 @@ const productsRouter = express.Router();
 
 productsRouter.post("/save", productController.save)
 
-productsRouter.post("/update", productController.update)
+productsRouter.put("/update", productController.update)
 
-productsRouter.post("/show-products", productController.showProducts)
+productsRouter.get("/show-products", productController.showProducts)
 
-productsRouter.post("/show-products-varieties", productController.showProductsVarieties )
+productsRouter.get("/show-products-varieties", productController.showProductsVarieties )
 
-productsRouter.post("/delete", productController.delete)
+productsRouter.delete("/delete", productController.delete)
 
 module.exports = productsRouter
