@@ -32,8 +32,7 @@ productController.update = async function (req, res)  {
 
 productController.showProducts = async (req, res) => {
     try {
-
-        const products = await Product.findAll()
+        const products = await Product.findAll({include: Product_Variety})
         console.log("products found - ", products);
         res.json(products);
     } catch (error) {
